@@ -1,13 +1,13 @@
+from pdb import post_mortem
+from symtable import Class
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 
-
-
-Class  Post(models.Model):
+Class  post(models.Model):
     
     
-    class Status(models.TextChoices):
+    Class Status(models.TextChoices):
         DRAFT = 'DF', 'Draft'
         PUBLISHED = 'PB', 'Published'
     
@@ -31,4 +31,5 @@ Class  Post(models.Model):
             models.Index(fields=['-publish']),
         ]
     
-    
+    def __str__(self):
+        return self.title
